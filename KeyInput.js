@@ -21,4 +21,4 @@ class KeyInput {
 
 const keyInput = new KeyInput();
 
-export default KeyInput;
+export default keyInput;

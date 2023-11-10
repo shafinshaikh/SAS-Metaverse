@@ -31,6 +31,15 @@ scene.add(box);
 
 function animate() {
 	requestAnimationFrame( animate );
+	if(KeyInput.isPressed(38)){
+		camera.position.y += 0.05;
+		camera.position.x += 0.05;
+	}
+	if(KeyInput.isPressed(40)){
+		camera.position.y -= 0.05;
+		camera.position.x -= 0.05;
+	}
+
     camera.lookAt(ground.position);
 	renderer.render( scene, camera );
 }
