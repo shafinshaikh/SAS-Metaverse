@@ -5,13 +5,20 @@ class KeyInput {
         window.addEventListener("keyup", this.up.bind(this));
     }
 
-    isPressed() {}
-    down(e) {
-        this.keys[e.keyCode] = true;
+    isPressed(keyCode) {
+        return this.keys[keyCode] ? this.keys[keyCode] : false;
     }
-    up() {}
+    down(e) {
+        if (this.keys[e.keyCode]) return;
+        this.keys[e.keyCode] = true;
+        console.log("KeyDown", e.key, e.keyCode);
+    }
+    up(e) {
+        this.keys[e.keyCode] = false;
+        console.log("KeyUp", e.key, e.keyCode);
+    }
 }
 
-const KeyInput = new KeyInput();
+const keyInput = new KeyInput();
 
 export default KeyInput;
